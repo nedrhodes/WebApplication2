@@ -66,12 +66,11 @@ namespace WebApplication2
 
                 spa.Options.SourcePath = "ClientApp";
                 //Configure the timeout to 5 minutes to avoid "The Angular CLI process did not start listening for requests within the timeout period of 50 seconds." issue
-                spa.Options.StartupTimeout = new TimeSpan(0, 5, 0);
+                //spa.Options.StartupTimeout = new TimeSpan(0, 5, 0);
 
                 if (env.IsDevelopment())
                 {
-                    //spa.UseAngularCliServer(npmScript: "start");
-                    spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");//Todo Switch back for SPA Dev
+                    spa.UseAngularCliServer(npmScript: "start");
                 }
             });
         }
